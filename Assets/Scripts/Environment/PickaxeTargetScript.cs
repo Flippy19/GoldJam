@@ -15,7 +15,7 @@ public class PickaxeTargetScript : MonoBehaviour
         }
     }
 
-    void Break()
+    public virtual void Break()
     {
         Destroy(gameObject);
     }
