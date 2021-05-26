@@ -36,7 +36,7 @@ public class PickaxeScript : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
             PickaxeTargetScript pickaxeTarget = hit.transform.GetComponent<PickaxeTargetScript>();
 
             if(pickaxeTarget != null)

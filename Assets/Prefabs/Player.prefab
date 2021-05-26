@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 473718107}
   - component: {fileID: 473718110}
   - component: {fileID: 473718109}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LampMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1423726313003392964}
   - component: {fileID: 222163216}
   - component: {fileID: 6476102377033684383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pickaxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 8636388334139818627}
   - component: {fileID: 8636388334139818624}
   - component: {fileID: 1628347902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 8636388334626678004}
   - component: {fileID: 8636388334626678003}
   - component: {fileID: 8636388334626678002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,9 @@ GameObject:
   - component: {fileID: 2069110161}
   - component: {fileID: 8636388334840036754}
   - component: {fileID: 8636388334840036755}
-  m_Layer: 0
+  - component: {fileID: 1347817595}
+  - component: {fileID: 1347817596}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,13 +514,13 @@ MonoBehaviour:
   groundDistance: 0.2
   groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   isGrounded: 0
   ceilingCheck: {fileID: 8636388335074937661}
   ceilingDistance: 0.2
   ceilingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   ceilingHit: 0
   velocity: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
@@ -540,6 +542,32 @@ MonoBehaviour:
   holdLamp: 0
   allGoList: []
   animator: {fileID: 0}
+--- !u!114 &1347817595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8636388334840036759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cc8c4cbd589c04c875d32ee590bb7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1347817596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8636388334840036759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772db4875df94e94994cf7bc2a8c062c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  gold: 0
 --- !u!1 &8636388335054571051
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +579,7 @@ GameObject:
   - component: {fileID: 8636388335054571048}
   - component: {fileID: 8636388335054571030}
   - component: {fileID: 8636388335054571049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PickaxeMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8636388335074937661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8636388335287106624}
   - component: {fileID: 8636388335287106625}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8636388335328898265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,13 +815,13 @@ GameObject:
   - component: {fileID: 8636388335440987058}
   - component: {fileID: 8636388335440987059}
   - component: {fileID: 8636388335440987070}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8636388335440987058
 Transform:
   m_ObjectHideFlags: 0
