@@ -10,12 +10,14 @@ public class PickaxeScript : MonoBehaviour
 
     public Camera playerCamera;
     public GameObject hitEffect;
+    public Animator animator;
 
     private float nextTimeToHit = 0f;
 
     void Start()
     {
         playerCamera = Camera.main;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -29,6 +31,8 @@ public class PickaxeScript : MonoBehaviour
 
     void PickaxeHit()
     {
+        animator.SetTrigger("Swing");
+
         RaycastHit hit;
         if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {

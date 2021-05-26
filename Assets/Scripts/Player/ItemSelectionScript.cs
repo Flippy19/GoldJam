@@ -13,10 +13,13 @@ public class ItemSelectionScript : MonoBehaviour
     private GameObject[] allGoArray;
     public List<GameObject> allGoList = new List<GameObject>();
 
+    public Animator animator;
+
     void Awake()
     {
         //Get all GameObjects in Scene and put it in the Array
         allGoArray = FindObjectsOfType<GameObject>();
+        animator = GetComponent<Animator>();
 
         //Convert Array to List
         foreach(GameObject GO in allGoArray)
@@ -44,8 +47,10 @@ public class ItemSelectionScript : MonoBehaviour
         holdLamp = false;
         holdPickaxe = true;
 
-        pickaxe.SetActive(true);
-        lamp.SetActive(false);
+        animator.SetTrigger("ChangeToPickaxe");
+
+       // pickaxe.SetActive(true);
+        //lamp.SetActive(false);
     }
 
     void SetToLamp()
@@ -53,9 +58,12 @@ public class ItemSelectionScript : MonoBehaviour
         holdLamp = true;
         holdPickaxe = false;
 
-        pickaxe.SetActive(false);
-        lamp.SetActive(true);
+        animator.SetTrigger("ChangeToLamp");
+
+        //pickaxe.SetActive(false);
+        //lamp.SetActive(true);
     } 
+
     void ParticularParticlesStop()
     {
         for(var i = allGoList.Count - 1; i > -1; i--)

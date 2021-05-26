@@ -85,7 +85,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4168301463968536172}
   - component: {fileID: 4168301463968536171}
-  - component: {fileID: 4168301463968536170}
   m_Layer: 0
   m_Name: CavnasCamera
   m_TagString: Untagged
@@ -151,14 +150,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4168301463968536170
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4168301463968536169}
-  m_Enabled: 1
 --- !u!1 &4168301464323905154
 GameObject:
   m_ObjectHideFlags: 0

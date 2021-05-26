@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1846846167302751999}
   - component: {fileID: 1846846167302751996}
   - component: {fileID: 1846846167302751997}
-  - component: {fileID: 1846846167302751986}
   - component: {fileID: 185212859}
+  - component: {fileID: 1846846167302751986}
   m_Layer: 9
   m_Name: FakeGold
   m_TagString: Untagged
@@ -98,19 +98,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1846846167302751986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846846167302751987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd2d74340e1e36498e27787bbfb7f6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
 --- !u!54 &185212859
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,6 +114,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1846846167302751986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846846167302751987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd2d74340e1e36498e27787bbfb7f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1 &7319976979373443181
 GameObject:
   m_ObjectHideFlags: 0
