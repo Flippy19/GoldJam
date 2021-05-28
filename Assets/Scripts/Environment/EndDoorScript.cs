@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class EndDoorScript : MonoBehaviour
 {
@@ -26,14 +28,15 @@ public class EndDoorScript : MonoBehaviour
     {
         if(playerGold >= goldNeeded)
         {
-            GameWin();
+            GameEnd();
         }
         else
         Debug.Log("Need. More. GOLD!");
     }
 
-    void GameWin()
+    void GameEnd()
     {
+        SceneManager.LoadScene(3);
         Debug.Log("Yay! You won the game");
     }
 }

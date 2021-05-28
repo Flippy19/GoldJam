@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class PlayerStats: MonoBehaviour
 {
-    public int health = 1;
+    public float health = 3;
     public int gold = 0;
 
+    public HudController hudController;
+
+    void Start()
+    {
+        hudController = FindObjectOfType<HudController>();
+    }
     public void GatherGold(int goldScore)
     {
         gold += goldScore;
+        hudController.RefreshGold(gold);
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+        hudController.RefreshHealth(health);
         CheckIfAlive();
     }
 

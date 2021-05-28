@@ -39,12 +39,12 @@ public class PlayerMovementScript : MonoBehaviour
 
         if(isGrounded && velocity.y < 0)
         {
-            velocity.y = -3f;
+            velocity.y = -1f;
         }
 
         if(ceilingHit && velocity.y > 0)
         {
-            velocity.y = -3f;
+            velocity.y = -1f;
         }
 
         //movement
