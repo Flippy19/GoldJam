@@ -10,35 +10,38 @@ public class ItemSelectionScript : MonoBehaviour
     public bool holdPickaxe = true;
     public bool holdLamp = false;
 
-    private GameObject[] allGoArray;
-    public List<GameObject> allGoList = new List<GameObject>();
+    private PickaxeTargetScript[] allPickaxeTargetArray;
+    public List<PickaxeTargetScript> allPickaxeTargetList = new List<PickaxeTargetScript>();
 
     public Animator animator;
 
     void Awake()
     {
         //Get all GameObjects in Scene and put it in the Array
-        allGoArray = FindObjectsOfType<GameObject>();
+        allPickaxeTargetArray = FindObjectsOfType<PickaxeTargetScript>();
         animator = GetComponent<Animator>();
 
         //Convert Array to List
-        foreach(GameObject GO in allGoArray)
-        allGoList.Add(GO);
+        foreach(PickaxeTargetScript target in allPickaxeTargetArray)
+        allPickaxeTargetList.Add(target);
     }
 
     void Update()
     {
-        //Input 1 on Keyboard to choose Pickaxe
-        if(Input.GetKeyDown(KeyCode.Alpha1) && holdLamp)
+        if(GameManager.IsInputEnabled)
         {
-            SetToPickaxe();
-            ParticularParticlesStop();
-        }
+            //Input 1 on Keyboard to choose Pickaxe
+            if(Input.GetKeyDown(KeyCode.Alpha1) && holdLamp)
+            {
+                SetToPickaxe();
+                ParticularParticlesStop();
+            }
 
-        //Input 2 on Keyboard to choose Lamp
-        if(Input.GetKeyDown(KeyCode.Alpha2) && holdPickaxe)
-        {
-            SetToLamp();
+            //Input 2 on Keyboard to choose Lamp
+            if(Input.GetKeyDown(KeyCode.Alpha2) && holdPickaxe)
+            {
+                SetToLamp();
+            }
         }
     }
 
@@ -48,9 +51,6 @@ public class ItemSelectionScript : MonoBehaviour
         holdPickaxe = true;
 
         animator.SetTrigger("ChangeToPickaxe");
-
-       // pickaxe.SetActive(true);
-        //lamp.SetActive(false);
     }
 
     void SetToLamp()
@@ -59,27 +59,25 @@ public class ItemSelectionScript : MonoBehaviour
         holdPickaxe = false;
 
         animator.SetTrigger("ChangeToLamp");
-
-        //pickaxe.SetActive(false);
-        //lamp.SetActive(true);
     } 
 
     void ParticularParticlesStop()
     {
-        for(var i = allGoList.Count - 1; i > -1; i--)
+        //Remove missing object in list
+        for(var i = allPickaxeTargetList.Count - 1; i > -1; i--)
         {
-            if(allGoList[i] == null)
-            allGoList.RemoveAt(i);
+            if(allPickaxeTargetList[i] == null)
+            allPickaxeTargetList.RemoveAt(i);
         }
 
-        //For every GameObject in allGoList List check layer and existance of ParticleSystem then Stop it
-        foreach(GameObject GO in allGoList)
+        //For every object in allPickaxeTargetList List check layer and existance of ParticleSystem then Stop it
+        foreach(PickaxeTargetScript target in allPickaxeTargetList)
         {
-            if(GO.layer == 9 || GO.layer == 10)
+            if(target.gameObject.layer == 9 || target.gameObject.layer == 10)
             {
-                if(GO.GetComponent<ParticleSystem>() != null)
+                if(target.GetComponent<ParticleSystem>() != null)
                 {
-                    GO.GetComponent<ParticleSystem>().Stop();
+                    target.GetComponent<ParticleSystem>().Stop();
                 }
             }
         }

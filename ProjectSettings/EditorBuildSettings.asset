@@ -10,11 +10,11 @@ EditorBuildSettings:
     guid: 5569cefaa00833a4596a6e3a7a81bbe2
   - enabled: 1
     path: Assets/Scenes/StartMineshaft.unity
-    guid: d9ebb64ea6850264cb0874c1b44fe164
+    guid: b5c5441a2cc9ba447bf769a43e728abb
   - enabled: 1
     path: Assets/Scenes/Mineshaft.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/EndingMineshaft.unity
-    guid: aa2171c66e8cf4a4d8e120217e57e36c
+    guid: d9ebb64ea6850264cb0874c1b44fe164
   m_configObjects: {}

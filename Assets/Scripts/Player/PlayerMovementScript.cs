@@ -33,56 +33,58 @@ public class PlayerMovementScript : MonoBehaviour
 
     void Update()
     {
-
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        ceilingHit = Physics.CheckSphere(ceilingCheck.position, ceilingDistance, ceilingMask);
-
-        if(isGrounded && velocity.y < 0)
+        if(GameManager.IsInputEnabled)
         {
-            velocity.y = -1f;
-        }
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            ceilingHit = Physics.CheckSphere(ceilingCheck.position, ceilingDistance, ceilingMask);
 
-        if(ceilingHit && velocity.y > 0)
-        {
-            velocity.y = -1f;
-        }
+            if(isGrounded && velocity.y < 0)
+            {
+                velocity.y = -1f;
+            }
 
-        //movement
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+            if(ceilingHit && velocity.y > 0)
+            {
+                velocity.y = -1f;
+            }
 
-        Vector3 move = transform.right * x + transform.forward * z;
+            //movement
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-        if(isGrounded)
-            controller.Move(move * speed * Time.deltaTime);
-        else
-            controller.Move(move * midAirSpeed * Time.deltaTime); 
+            Vector3 move = transform.right * x + transform.forward * z;
 
-        //jumping
-        if(Input.GetButton("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            if(isGrounded)
+                controller.Move(move * speed * Time.deltaTime);
+            else
+                controller.Move(move * midAirSpeed * Time.deltaTime); 
 
-            //set bool to false when jump
-            animator.SetBool("IsMoving", false);
-        }
+            //jumping
+            if(Input.GetButton("Jump") && isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
-        //gravity force
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+                //set bool to false when jump
+                animator.SetBool("IsMoving", false);
+            }
 
-        //walk animation trigger
-        if(isGrounded)
-        {
-            if(Mathf.Pow(z,2) > 0.9f || Mathf.Pow(x,2) > 0.9f)
-            animator.SetBool("IsMoving", true);
+            //gravity force
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
 
-            else if(Mathf.Pow(z,2) - 0.1f <= 0.9f || Mathf.Pow(x,2) - 0.1f <= 0.9f)
-            animator.SetBool("IsMoving", false);
-        }
-        else
-        {
-            animator.SetBool("IsMoving", false);
+            //walk animation trigger
+            if(isGrounded)
+            {
+                if(Mathf.Pow(z,2) > 0.9f || Mathf.Pow(x,2) > 0.9f)
+                animator.SetBool("IsMoving", true);
+
+                else if(Mathf.Pow(z,2) - 0.1f <= 0.9f || Mathf.Pow(x,2) - 0.1f <= 0.9f)
+                animator.SetBool("IsMoving", false);
+            }
+            else
+            {
+                animator.SetBool("IsMoving", false);
+            }
         }
     }
 }

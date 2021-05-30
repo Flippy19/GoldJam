@@ -7,10 +7,14 @@ public class UIController : MonoBehaviour
 {
     public bool pauseActive;
     public GameObject pauseMenu;
+    public GameObject deathScreen;
+    
     void Start()
     {
         pauseMenu.SetActive(false);
         pauseActive = false;
+
+        deathScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,6 +54,7 @@ public class UIController : MonoBehaviour
     {
         //destroy MusicMenager
         Time.timeScale = 1;
+        GameManager.IsInputEnabled = true;
         SceneManager.LoadScene(0);
     }
 }

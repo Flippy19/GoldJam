@@ -22,10 +22,13 @@ public class PickaxeScript : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButton("Fire1") && Time.time >= nextTimeToHit)
+        if(GameManager.IsInputEnabled)
         {
-            nextTimeToHit = Time.time + 1f/hitRate;
-            PickaxeHit();
+            if(Input.GetButton("Fire1") && Time.time >= nextTimeToHit)
+            {
+                nextTimeToHit = Time.time + 1f/hitRate;
+                PickaxeHit();
+            }
         }
     }
 

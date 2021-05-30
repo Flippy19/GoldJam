@@ -8,6 +8,7 @@ public class PlayerStats: MonoBehaviour
     public int gold = 0;
 
     public HudController hudController;
+    public GameObject deathScreen;
 
     void Start()
     {
@@ -36,10 +37,13 @@ public class PlayerStats: MonoBehaviour
 
     IEnumerator Death()
     {
-        Debug.Log("Rest in pieces");
-        
+        GameManager.IsInputEnabled = false;
+
         yield return new WaitForSeconds(1f);
 
+        deathScreen.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
 }

@@ -8,12 +8,12 @@ public class LampScript : MonoBehaviour
     {
         if(collision.gameObject.layer == 9)
         {
-            collision.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
+            collision.GetComponent<ParticleSystem>().Play();
         }
 
         if(collision.gameObject.layer == 10)
         {
-            collision.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
+            collision.GetComponent<ParticleSystem>().Play();
         }
     }
 
@@ -21,12 +21,12 @@ public class LampScript : MonoBehaviour
     {
         if(collision.gameObject.layer == 9)
         {
-            collision.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Stop();
+            collision.GetComponent<ParticleSystem>().Stop();
         }
 
         if(collision.gameObject.layer == 10)
         {
-            collision.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Stop();
+            collision.GetComponent<ParticleSystem>().Stop();
         }
 
     }
