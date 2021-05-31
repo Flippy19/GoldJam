@@ -28,7 +28,7 @@ public class ItemSelectionScript : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.IsInputEnabled)
+        if(GameManager.instance.IsInputEnabled)
         {
             //Input 1 on Keyboard to choose Pickaxe
             if(Input.GetKeyDown(KeyCode.Alpha1) && holdLamp)

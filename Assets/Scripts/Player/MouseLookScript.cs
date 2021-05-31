@@ -16,7 +16,7 @@ public class MouseLookScript : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.IsInputEnabled)
+        if(GameManager.instance.IsInputEnabled)
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;

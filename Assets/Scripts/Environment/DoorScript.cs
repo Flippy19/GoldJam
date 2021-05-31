@@ -38,6 +38,8 @@ public class DoorScript : MonoBehaviour
         if(playerStatsScript.gold >= goldNeeded)
         {
             playerStatsScript.gold = playerStatsScript.gold - goldNeeded;
+            GameManager.instance.goldAmount = playerStatsScript.gold;
+            
             hudController.RefreshGold(playerStatsScript.gold);
             Open();
         }
@@ -50,6 +52,8 @@ public class DoorScript : MonoBehaviour
             doorOpened = true;
             animator.SetBool("DoorOpened", true);
             Debug.Log("The door has been opened");
+
+            Destroy(gameObject, 3.0f);
         }
 
     }

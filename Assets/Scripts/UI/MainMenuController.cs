@@ -10,16 +10,42 @@ public class MainMenuController : MonoBehaviour
     public bool optionsActive;
     public GameObject optionsMenu;
 
-    void Start()
+    public bool startGameMenuActive;
+    public GameObject startGameMenu;
+
+    void Awake()
     {
         optionsActive = false;
         optionsMenu.SetActive(false);
+
+        startGameMenu.SetActive(false);
+        startGameMenuActive = false;
+        
         Cursor.visible = true;
     }
 
-    public void StartGame()
+    public void ShowStartGameMenu()
+    {
+        if(!startGameMenuActive)
+        {
+            startGameMenu.SetActive(true);
+            startGameMenuActive = true;
+        }
+        else
+        {
+            startGameMenu.SetActive(false);
+            startGameMenuActive = false;
+        }
+    }
+
+    public void StartNewGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void SkipTutorial()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void Options()

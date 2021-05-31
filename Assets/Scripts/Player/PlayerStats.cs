@@ -10,10 +10,14 @@ public class PlayerStats: MonoBehaviour
     public HudController hudController;
     public GameObject deathScreen;
 
-    void Start()
+    void Awake()
     {
         hudController = FindObjectOfType<HudController>();
+        //gold = GameManager.instance.goldAmount;
+
+        GatherGold(GameManager.instance.goldAmount);
     }
+
     public void GatherGold(int goldScore)
     {
         gold += goldScore;
@@ -37,7 +41,7 @@ public class PlayerStats: MonoBehaviour
 
     IEnumerator Death()
     {
-        GameManager.IsInputEnabled = false;
+        GameManager.instance.IsInputEnabled = false;
 
         yield return new WaitForSeconds(1f);
 

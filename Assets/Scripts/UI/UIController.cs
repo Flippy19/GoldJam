@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject deathScreen;
     
-    void Start()
+    void Awake()
     {
         pauseMenu.SetActive(false);
         pauseActive = false;
@@ -20,10 +20,14 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(GameManager.instance.IsInputEnabled)
         {
-            Pause();    
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                Pause();    
+            }
         }
+
     }
 
     public void Pause()
@@ -54,7 +58,7 @@ public class UIController : MonoBehaviour
     {
         //destroy MusicMenager
         Time.timeScale = 1;
-        GameManager.IsInputEnabled = true;
+        GameManager.instance.IsInputEnabled = true;
         SceneManager.LoadScene(0);
     }
 }

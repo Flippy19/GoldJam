@@ -15,6 +15,7 @@ public class GoldScript : PickaxeTargetScript
     public override void Break()
     {
         playerStatsScript.GatherGold(goldScore);
+        GameManager.instance.goldAmount += goldScore;
         base.Break();
 
         Debug.Log("Nice nice, it was actually a fucking golden nugget <3");

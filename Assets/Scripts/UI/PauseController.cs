@@ -27,7 +27,7 @@ public class PauseController : MonoBehaviour
 
     public void ExitToMenu()
     {
-        GameManager.IsInputEnabled = true;
+        GameManager.instance.IsInputEnabled = true;
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }

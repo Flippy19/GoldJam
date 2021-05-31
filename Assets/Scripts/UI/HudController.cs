@@ -14,7 +14,7 @@ public class HudController : MonoBehaviour
 
     public PlayerStats playerStats;
     
-    void Start()
+    void Awake()
     {
         playerStats = FindObjectOfType<PlayerStats>();
 

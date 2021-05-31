@@ -14,7 +14,7 @@ public class PickaxeScript : MonoBehaviour
 
     private float nextTimeToHit = 0f;
 
-    void Start()
+    void Awake()
     {
         playerCamera = Camera.main;
         animator = GetComponent<Animator>();
@@ -22,7 +22,7 @@ public class PickaxeScript : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.IsInputEnabled)
+        if(GameManager.instance.IsInputEnabled)
         {
             if(Input.GetButton("Fire1") && Time.time >= nextTimeToHit)
             {

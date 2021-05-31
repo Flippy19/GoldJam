@@ -25,7 +25,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     public Animator animator;
 
-    void Start()
+    void Awake()
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
@@ -33,7 +33,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.IsInputEnabled)
+        if(GameManager.instance.IsInputEnabled)
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
             ceilingHit = Physics.CheckSphere(ceilingCheck.position, ceilingDistance, ceilingMask);
