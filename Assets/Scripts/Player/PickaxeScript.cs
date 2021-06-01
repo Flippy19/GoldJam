@@ -47,8 +47,12 @@ public class PickaxeScript : MonoBehaviour
                 pickaxeTarget.TakeDamage(damage);
             }
 
-            GameObject hitEffectInst = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(hitEffectInst, 1f);
+            if(hit.transform.gameObject.layer != 11)
+            {
+                GameObject hitEffectInst = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(hitEffectInst, 1f);
+            }
+
 
         }
     }

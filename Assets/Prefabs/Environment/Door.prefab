@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2665748825443674903}
   - component: {fileID: 579563803325389271}
   - component: {fileID: 1078125944755466985}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GoldNeeded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 8424446404016565482}
   - component: {fileID: 8424446404016565483}
   - component: {fileID: 8424446404016565480}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,8 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStatsScript: {fileID: 0}
+  hudController: {fileID: 0}
   goldNeededText: {fileID: 0}
-  goldNeeded: 2
+  goldNeeded: 20
   doorOpened: 0
   animator: {fileID: 0}
 --- !u!1 &8424446404947060977
@@ -343,7 +344,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3b8307f683ffee441ab6feb8c37c3f3e, type: 2}
+  - {fileID: 2100000, guid: 7de15305b1325d64084515645f974224, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

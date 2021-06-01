@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseLookScript : MonoBehaviour
 {
-    public float mouseSens = 500f;
+    public float mouseSens = 200;
     float xRotation = 0f;
 
     public Transform playerBody;
@@ -27,5 +27,10 @@ public class MouseLookScript : MonoBehaviour
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
         }
+    }
+    
+    public void ChangeMouseSensitivity(float mouseSensSlider)
+    {
+        mouseSens = mouseSensSlider;
     }
 }
