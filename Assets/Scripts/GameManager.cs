@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public  int goldAmount;
+    public int allGoldAmount;
     public  bool IsInputEnabled = true;
 
     void Awake()

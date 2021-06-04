@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EndGameScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject credits;
+    public TextMeshPro finalGoldAmount;
+
     void Start()
     {
-        
+        credits.SetActive(false);
+        finalGoldAmount = credits.transform.GetChild(0).GetComponent<TextMeshPro>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider collision)
     {
-        
+        if(collision.gameObject.layer == 6)
+        {
+            credits.SetActive(true);
+            finalGoldAmount.text = GameManager.instance.allGoldAmount.ToString() + "/83 Golden nuggets";
+            Destroy(gameObject);
+        }
     }
 }
