@@ -20,7 +20,6 @@ public class GoldScript : PickaxeTargetScript
         
         base.Break();
 
-        Debug.Log("Nice nice, it was actually a fucking golden nugget <3");
+        AudioManager.instance.Play("GoldBreak");
     }
-
 }

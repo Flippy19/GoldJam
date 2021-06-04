@@ -30,8 +30,11 @@ public class PauseController : MonoBehaviour
 
     public void ExitToMenu()
     {
+        AudioManager.instance.Play("ButtonUI");
         GameManager.instance.IsInputEnabled = true;
         Time.timeScale = 1;
+
+        Destroy(GameManager.instance.gameObject);
         SceneManager.LoadScene(0);
     }
 }

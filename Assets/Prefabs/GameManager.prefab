@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470901b389f09d54cbc09f2ad2b128a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldAmount: 0
+  allGoldAmount: 0
+  mouseSens: 600
+  IsInputEnabled: 1

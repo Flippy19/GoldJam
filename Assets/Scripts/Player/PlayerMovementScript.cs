@@ -6,8 +6,8 @@ public class PlayerMovementScript : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 20f;
-    public float midAirSpeed = 15f;
+    public float speed = 10f;
+    public float midAirSpeed = 8f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
@@ -63,6 +63,8 @@ public class PlayerMovementScript : MonoBehaviour
             if(Input.GetButton("Jump") && isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+                AudioManager.instance.Play("Jump");
 
                 //set bool to false when jump
                 animator.SetBool("IsMoving", false);

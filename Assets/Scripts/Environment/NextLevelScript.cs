@@ -10,6 +10,8 @@ public class NextLevelScript : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.layer == 6)
-        SceneManager.LoadScene(sceneIndex);
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 }

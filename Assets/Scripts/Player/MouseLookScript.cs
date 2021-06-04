@@ -12,6 +12,7 @@ public class MouseLookScript : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        mouseSens = GameManager.instance.mouseSens;
     }
 
     void Update()
@@ -32,5 +33,6 @@ public class MouseLookScript : MonoBehaviour
     public void ChangeMouseSensitivity(float mouseSensSlider)
     {
         mouseSens = mouseSensSlider;
+        GameManager.instance.mouseSens = mouseSens;
     }
 }

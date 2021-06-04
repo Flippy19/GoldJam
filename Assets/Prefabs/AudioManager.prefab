@@ -43,4 +43,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0b4844f27acc47a013d8080867292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: PickaxeHit
+    clip: {fileID: 8300000, guid: 0aee9233e0a41fd49835e9dac6151e56, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GoldBreak
+    clip: {fileID: 8300000, guid: 4725ffc1103e9c44fb71b214f0b0978c, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonUI
+    clip: {fileID: 8300000, guid: ee17c6df33cf9834ab4a6759955becd2, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Door
+    clip: {fileID: 8300000, guid: 132ce0026d19ab6488b427face487e00, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Wall
+    clip: {fileID: 8300000, guid: e5f707dfff0cab641b28683af60ec8f9, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: bf9ede814ed3f4a45a333a1be80436bb, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: 3f7a9a58e318e8b4182e73ac8fedaf65, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: daa44349432a003429713a13e84ee184, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ItemChange
+    clip: {fileID: 8300000, guid: 0f44c603cf907104d847091e9f8915a9, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Cave
+    clip: {fileID: 8300000, guid: 4a028150b5cd27741bc63a46162799b6, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

@@ -50,6 +50,9 @@ public class PickaxeScript : MonoBehaviour
             if(hit.transform.gameObject.layer != 11)
             {
                 GameObject hitEffectInst = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+                AudioManager.instance.Play("PickaxeHit");
+                
                 Destroy(hitEffectInst, 1f);
             }
 

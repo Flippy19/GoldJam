@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        //Here you can play theme or ambience <3
+        instance.Play("Cave");
     }
 
     //AudioManager.instance.Play("soundName")

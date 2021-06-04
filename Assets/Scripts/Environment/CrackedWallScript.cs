@@ -6,7 +6,7 @@ public class CrackedWallScript : PickaxeTargetScript
 {
     public override void Break()
     {
-        Debug.Log("Aaaa! My Wall! You monster...");
+        AudioManager.instance.Play("Wall");
         base.Break();
     }
 }

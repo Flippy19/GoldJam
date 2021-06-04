@@ -51,6 +51,7 @@ public class ItemSelectionScript : MonoBehaviour
         holdPickaxe = true;
 
         animator.SetTrigger("ChangeToPickaxe");
+        AudioManager.instance.Play("ItemChange");
     }
 
     void SetToLamp()
@@ -59,6 +60,7 @@ public class ItemSelectionScript : MonoBehaviour
         holdPickaxe = false;
 
         animator.SetTrigger("ChangeToLamp");
+        AudioManager.instance.Play("ItemChange");
     } 
 
     void ParticularParticlesStop()

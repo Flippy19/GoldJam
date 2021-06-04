@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public  int goldAmount;
     public int allGoldAmount;
+    public float mouseSens = 600;
     public  bool IsInputEnabled = true;
 
     void Awake()

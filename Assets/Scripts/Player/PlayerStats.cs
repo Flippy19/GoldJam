@@ -42,6 +42,7 @@ public class PlayerStats: MonoBehaviour
     IEnumerator Death()
     {
         GameManager.instance.IsInputEnabled = false;
+        AudioManager.instance.Play("Death");
 
         yield return new WaitForSeconds(1f);
 

@@ -16,6 +16,7 @@ public class FakeGoldScript : PickaxeTargetScript
     {
         base.Break();
         playerStats.TakeDamage(damage);
-        Debug.Log("It was fake, you fucking donkey!");
+        AudioManager.instance.Play("Explosion");
+
     }
 }

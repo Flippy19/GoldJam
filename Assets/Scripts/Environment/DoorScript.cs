@@ -51,9 +51,10 @@ public class DoorScript : MonoBehaviour
         {
             doorOpened = true;
             animator.SetBool("DoorOpened", true);
-            Debug.Log("The door has been opened");
+            
+            AudioManager.instance.Play("Door");
 
-            Destroy(gameObject, 3.0f);
+            Destroy(this.gameObject, 2.0f);
         }
 
     }

@@ -26,6 +26,7 @@ public class MainMenuController : MonoBehaviour
 
     public void ShowStartGameMenu()
     {
+        AudioManager.instance.Play("ButtonUI");
         if(!startGameMenuActive)
         {
             startGameMenu.SetActive(true);
@@ -40,16 +41,19 @@ public class MainMenuController : MonoBehaviour
 
     public void StartNewGame()
     {
+        AudioManager.instance.Play("ButtonUI");
         SceneManager.LoadScene(1);
     }
 
     public void SkipTutorial()
     {
+        AudioManager.instance.Play("ButtonUI");
         SceneManager.LoadScene(2);
     }
 
     public void Options()
     {
+        AudioManager.instance.Play("ButtonUI");
         if(!optionsActive)
         {
             optionsMenu.SetActive(true);
@@ -64,6 +68,7 @@ public class MainMenuController : MonoBehaviour
 
     public void ChangeResolution(int resolution)
     {   
+        AudioManager.instance.Play("ButtonUI");
         if(resolution == 0)
             Screen.SetResolution(1920,1080, Screen.fullScreenMode);
         if(resolution == 1)
@@ -72,11 +77,12 @@ public class MainMenuController : MonoBehaviour
 
     public void ToggleFullscreen(bool toggleFullscreen)
     {
+        AudioManager.instance.Play("ButtonUI");
+
         if(toggleFullscreen)
             Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
         else
             Screen.fullScreenMode = FullScreenMode.Windowed;
-
     }
 
     public void MuteSounds(bool mute)
@@ -89,6 +95,7 @@ public class MainMenuController : MonoBehaviour
 
     public void ExitGame()
     {
+        AudioManager.instance.Play("ButtonUI");
         Application.Quit();
     }
 }

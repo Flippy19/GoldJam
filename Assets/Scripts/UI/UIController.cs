@@ -34,6 +34,7 @@ public class UIController : MonoBehaviour
     {
         if(!pauseActive)
         {
+            AudioManager.instance.Play("ButtonUI");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
@@ -44,6 +45,7 @@ public class UIController : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.Play("ButtonUI");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -56,7 +58,7 @@ public class UIController : MonoBehaviour
 
     public void ExitToMenu()
     {
-        //destroy MusicMenager
+        AudioManager.instance.Play("ButtonUI");
         Time.timeScale = 1;
         GameManager.instance.IsInputEnabled = true;
         SceneManager.LoadScene(0);
